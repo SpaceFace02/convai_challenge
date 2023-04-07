@@ -1,0 +1,36 @@
+[
+  {
+    "name": "Intro to ML and AI",
+    "prompt": "Give me 3 questions about an intro to Machine Learning, and their respective answers.",
+    "questions": [
+      "What is Machine Learning",
+      "What are the different types of machine learning?",
+      "What are some real-world applications of machine learning?"
+    ]
+  },
+  {
+    "name": "Intro to Training a model",
+    "prompt": "Give me 3 questions about the different steps in training a model, and their respective answers.",
+    "questions": [
+      "What is the best approach for selecting the appropriate machine learning algorithm for a specific problem, and what factors should be considered in the decision-making process?",
+      "How can we prevent overfitting while training a machine learning model, and what techniques can be used to improve model generalization performance?",
+      "What is the best way to optimize the hyperparameters of a machine learning model, and how can we balance the need for high model accuracy with the computational resources required for hyperparameter tuning?"
+    ]
+  },
+  {
+    "name": "Intro to Data Collection",
+    "prompt": "Give me 3 questions about data collection, and their respective answers."
+  },
+  {
+    "name": "Intro to Data Preprocessing",
+    "prompt": "Give me 3 questions about Preprocessing in ML and AI, and their respective answers."
+  },
+  {
+    "name": "Intro to Training",
+    "prompt": "Give me 3 questions about training in ML and AI, and their respective answers."
+  },
+  {
+    "name": "Intro to Evaluation",
+    "prompt": "Give me 3 questions about Evaluation in ML and AI, and their respective answers."
+  }
+]
