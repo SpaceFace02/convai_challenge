@@ -9,9 +9,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import BounceLoader from "react-spinners/BounceLoader";
 
 import Modal from "react-modal";
+import { buttonStyle, customStyles, override } from "./styles";
 
 export default function Home() {
-  const [animalInput, setAnimalInput] = useState("");
+  const [userInput, setUserInput] = useState("");
   const [result, setResult] = useState();
   const [isOpen, setIsOpen] = useState(false);
   const [finalCheck, setFinalCheck] = useState("");
@@ -28,42 +29,13 @@ export default function Home() {
       }
       setLearnLoading(false);
       setResult(data.result);
-      setAnimalInput("");
+      setUserInput("");
     } catch (error) {
       // Consider implementing your own error handling logic here
       console.error(error);
       alert(error.message);
     }
   }
-
-  const override = {
-    display: "block",
-    margin: "0 auto",
-    marginTop: "5px",
-    marginBottom: "5px",
-  };
-
-  const customStyles = {
-    overlay: { backgroundColor: "rgba(0, 0, 0, 0.6)" },
-    content: {
-      top: "50%",
-      left: "50%",
-      right: "auto",
-      bottom: "auto",
-      marginRight: "-50%",
-      transform: "translate(-50%, -50%)",
-    },
-  };
-
-  const buttonStyle = {
-    backgroundColor: "#F9A826",
-    color: "white",
-    border: "none",
-    borderRadius: "5px",
-    padding: "10px 20px",
-    cursor: "pointer",
-    marginTop: "20px",
-  };
 
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [quesIdx, setQuesIdx] = useState(0);
@@ -102,7 +74,7 @@ export default function Home() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        animal: prompt,
+        userInput: prompt,
       }),
     });
     const data = await response.json();
@@ -112,12 +84,12 @@ export default function Home() {
   const checkAnswer = async () => {
     setResultLoading(true);
     const data = await callBE(
-      `Question is '${fetchedQuestions[quesIdx]}', and answer is '${animalInput}', am I correct? Answer in just yes or no`
+      `Question is '${fetchedQuestions[quesIdx]}', and answer is '${userInput}', am I correct? Answer in just yes or no`
     );
 
     // Only first 3 letters of finalCheck
     setFinalCheck(data.result);
-    setAnimalInput("");
+    setUserInput("");
     setResultLoading(false);
     if (data.result === "Yes.") {
       toast.success(`You have answered ${quesIdx + 1} / 3 questions correctly!`);
@@ -188,10 +160,10 @@ export default function Home() {
         <form onSubmit={onSubmit}>
           <input
             type="text"
-            name="animal"
+            name="userUnput"
             placeholder="Intro to ML"
-            value={animalInput}
-            onChange={(e) => setAnimalInput(e.target.value)}
+            value={userInput}
+            onChange={(e) => setUserInput(e.target.value)}
           />
           <input type="submit" value="Learn about this topic." />
         </form>
