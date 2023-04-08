@@ -121,7 +121,7 @@ export default function Home() {
     setQuestionsLoading(false);
   };
 
-  export const customStyles = {
+  const customStyles = {
     overlay: { backgroundColor: "rgba(0, 0, 0, 0.6)" },
     content: {
       top: "50%",
@@ -133,7 +133,7 @@ export default function Home() {
     },
   };
 
-  export const buttonStyle = {
+  const buttonStyle = {
     backgroundColor: "#F9A826",
     color: "white",
     border: "none",
@@ -143,7 +143,7 @@ export default function Home() {
     marginTop: "20px",
   };
 
-  export const override = {
+  const override = {
     display: "block",
     margin: "0 auto",
     marginTop: "5px",
