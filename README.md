@@ -1,6 +1,6 @@
 # Convai Challenge MIT Manipal
 
-Project Deploy link - https://convai-challenge.vercel.app/
+Project Deploy link - https://convai-challenge-7qvgsh51o-spaceface02.vercel.app/
 
 ### Note:
 
