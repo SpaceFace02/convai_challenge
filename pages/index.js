@@ -9,7 +9,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import BounceLoader from "react-spinners/BounceLoader";
 
 import Modal from "react-modal";
-import { buttonStyle, customStyles, override } from "./styles";
 
 export default function Home() {
   const [userInput, setUserInput] = useState("");
